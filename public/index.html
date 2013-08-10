@@ -17,13 +17,13 @@
         <div class="well well-lg">
           <div class="panel">
             <div class="panel-heading">
-              <h3 class="panel-title">Data binding with AngularJS</h3>
+              <h3 class="panel-title">Filters with AngularJS</h3>
             </div>
 
             <!-- Example Data Binding -->
-            <input type='text' ng-model="my_text" class='form-control'>
+            <input type='number' ng-model="an_amount" class='form-control' placeholder='Enter an amount'>
             <label>
-              {{my_text}}
+              {{an_amount | currency}}
             </label>
             <!--  -->
 
