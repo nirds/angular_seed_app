@@ -1,13 +1,16 @@
 function MyController($scope){
-  $scope.important_information = 'Set in MyController';
+  $scope.items = [
+    {text: 'Initialized in the controller'},
+    {text: 'Also Initialized in the controller'}
+  ];
 
-  $scope.randomizeCase = function(){
-    var array = $scope.important_information.split('');
+  $scope.addItem = function(){
+    $scope.items.push({text: $scope.itemText});
+    $scope.itemText = '';
+  };
 
-    for(var i=0; i < array.length; i ++){
-      array[i] = Math.round(Math.random()) == 1 ? array[i].toUpperCase(): array[i].toLowerCase();
-    };
-
-    $scope.important_information = array.join('');
+  $scope.clearItems = function(){
+    $scope.itemText = '';
+    $scope.items = [];
   }
 }
