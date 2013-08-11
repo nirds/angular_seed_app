@@ -11,7 +11,7 @@ app.config(function($routeProvider, $locationProvider){
 app.factory("Person", function() {
   var people = [
     { firstName: "Brad",     lastName: 'Pitt',   age: 78,  eyes: 'Green', id: 1 },
-    { firstName: "Angilina", lastName: 'Jolie',  age: 104, eyes: 'Blue',  id: 2 },
+    { firstName: "Angelina", lastName: 'Jolie',  age: 104, eyes: 'Blue',  id: 2 },
     { firstName: "Tom",      lastName: 'Cruise', age: 981, eyes: 'Two',   id: 3 }
   ];
 
@@ -34,14 +34,11 @@ app.factory("Person", function() {
 
 app.controller("IndexController", function($scope, $location, Person) {
   $scope.people = Person.all();
-
-  $scope.show = function(person){
-    $location.path('/show/' + person.id + '.html')
-  }
 });
 
 app.controller("ShowController", function($scope, $routeParams, $window, Person) {
   $scope.person = Person.find($routeParams.id);
+
   $scope.back = function(){
     $window.history.back();
   };
